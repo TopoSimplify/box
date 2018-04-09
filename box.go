@@ -1,8 +1,8 @@
 package box
 
 import (
-	"github.com/intdxdt/geom"
 	"github.com/intdxdt/mbr"
+	"github.com/intdxdt/geom"
 )
 
 func MBRToPolygon(o *mbr.MBR) *geom.Polygon {
