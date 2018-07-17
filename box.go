@@ -6,9 +6,9 @@ import (
 )
 
 func MBRToPolygon(o *mbr.MBR) *geom.Polygon {
-	var coordinates = make([]*geom.Point, 0)
+	var coordinates = make([]geom.Point, 0)
 	for _, a := range o.AsPolyArray() {
-		coordinates = append(coordinates, geom.NewPoint(a))
+		coordinates = append(coordinates, geom.CreatePoint(a))
 	}
 	return geom.NewPolygon(coordinates)
 }
