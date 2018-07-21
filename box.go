@@ -5,7 +5,7 @@ import (
 	"github.com/intdxdt/geom"
 )
 
-func MBRToPolygon(o *mbr.MBR) *geom.Polygon {
+func MBRToPolygon(o mbr.MBR) *geom.Polygon {
 	var array = o.AsPolyArray()
 	var coordinates = make([]geom.Point, 0, len(array))
 	for i := range  array{

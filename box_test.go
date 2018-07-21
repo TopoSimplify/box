@@ -11,7 +11,7 @@ func TestMBRToPolygon(t *testing.T) {
 	g := goblin.Goblin(t)
 	g.Describe("box as polygon", func() {
 		g.It("should test mbr to polygon conversion", func() {
-			box := mbr.New(0.25, 0.5, 5, 5)
+			box := mbr.CreateMBR(0.25, 0.5, 5, 5)
 			pts := make([]geom.Point, 0)
 			for _, pt := range box.AsPolyArray() {
 				pts = append(pts, geom.CreatePoint(pt))
