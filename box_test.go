@@ -11,13 +11,13 @@ func TestMBRToPolygon(t *testing.T) {
 	g := goblin.Goblin(t)
 	g.Describe("box as polygon", func() {
 		g.It("should test mbr to polygon conversion", func() {
-			box := mbr.CreateMBR(0.25, 0.5, 5, 5)
-			pts := make([]geom.Point, 0)
+			var box = mbr.CreateMBR(0.25, 0.5, 5, 5)
+			var pts = make([]geom.Point, 0)
 			for _, pt := range box.AsPolyArray() {
 				pts = append(pts, geom.CreatePoint(pt))
 			}
 
-			ply := geom.NewPolygon(pts)
+			ply := geom.NewPolygon(geom.Coordinates(pts))
 			g.Assert(box.Area()).Equal(ply.Area())
 			g.Assert(MBRToPolygon(box).Area()).Equal(ply.Area())
 		})
