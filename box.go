@@ -7,6 +7,12 @@ import (
 
 func MBRToPolygon(o mbr.MBR) *geom.Polygon {
 	return geom.NewPolygon(geom.Coordinates(
-		[]geom.Point{{o[0], o[1]}, {o[0], o[3]}, {o[2], o[3]}, {o[2], o[1]}, {o[0], o[1]}},
+		[]geom.Point{
+			{o.MinX, o.MinY}, 
+			{o.MinX, o.MaxY}, 
+			{o.MaxX, o.MaxY}, 
+			{o.MaxX, o.MinY}, 
+			{o.MinX, o.MinY},
+		},
 	))
 }
