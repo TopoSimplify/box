@@ -1,10 +1,10 @@
 package box
 
 import (
-	"testing"
-	"github.com/intdxdt/mbr"
-	"github.com/intdxdt/geom"
 	"github.com/franela/goblin"
+	"github.com/intdxdt/geom"
+	"github.com/intdxdt/mbr"
+	"testing"
 )
 
 func TestMBRToPolygon(t *testing.T) {
